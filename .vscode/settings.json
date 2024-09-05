@@ -1,0 +1,30 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "README.md": true,
+        "postcss.config.mjs": true,
+        "next.config.mjs": true,
+        "next-env.d.ts": true,
+        ".gitignore": true,
+        "package.json": true,
+        "node_modules": true,
+        ".vscode": true,
+        "components.json": true
+    },
+    "hide-files.files": [
+        "README.md",
+        "postcss.config.mjs",
+        "next.config.mjs",
+        "next-env.d.ts",
+        ".gitignore",
+        "package.json",
+        "node_modules",
+        ".vscode",
+        "components.json"
+    ]
+}
