@@ -3,10 +3,39 @@ import { useChat } from "ai/react";
 import { useParams } from "next/navigation";
 import IaProfile from "@/assets/profile.jpg";
 import { cn } from "@/lib/utils";
+import { useContext, useEffect } from "react";
+import { ChatsContext } from "@/contexts/chatscontext";
+import { UserContext } from "@/contexts/usercontext";
 
 export default function ChatMessages() {
+    const { getChat, updateChat } = useContext(ChatsContext);
     const { chatid } = useParams();
-    const { messages } = useChat({ id: chatid.toString() });
+    const { getUser } = useContext(UserContext);
+    const chat = getChat(chatid.toString());
+    const { messages } = useChat({
+        id: chat?.id,
+        initialMessages: chat?.messages,
+        body: {
+            userName: getUser().name,
+            level: chat?.level || "",
+            frequency: chat?.frequency || "",
+            medicalConditions: chat?.medicalConditions || "",
+            personalPreferences: chat?.personalPreferences || "",
+            goal: chat?.goal || ""
+        }
+    });
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            const chat = getChat(chatid.toString());
+            if (chat) {
+                console.log('updating chat', messages);
+                updateChat({ ...chat, messages: messages });
+            }
+        }, 1000);
+        return () => clearTimeout(timeoutId);
+    }, [messages, chatid]);
+
 
     return (
         <div className="h-full flex-1 w-full flex flex-col-reverse overflow-auto justify-center items-center [overflow-anchor:auto] ">

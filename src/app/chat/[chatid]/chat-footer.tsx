@@ -1,13 +1,31 @@
 import { Button } from "@/components/ui/button";
+import { ChatsContext } from "@/contexts/chatscontext";
+import { UserContext } from "@/contexts/usercontext";
 import { useChat } from "ai/react";
 import { CirclePause, Send, SendHorizontal } from "lucide-react";
 import { useParams } from "next/navigation";
+import { useContext } from "react";
 import ReactTextareaAutosize from "react-textarea-autosize";
 
 
 export default function ChatFooter() {
     const { chatid } = useParams();
-    const { input, handleInputChange, handleSubmit, isLoading } = useChat({ id: chatid.toString() });
+    const { getChat } = useContext(ChatsContext);
+    const { getUser } = useContext(UserContext);
+    const chat = getChat(chatid.toString());
+
+    const { input, handleInputChange, handleSubmit, isLoading } = useChat({
+        id: chatid.toString(),
+        initialMessages: chat?.messages,
+        body: {
+            userName: getUser().name,
+            level: chat?.level || "",
+            frequency: chat?.frequency || "",
+            medicalConditions: chat?.medicalConditions || "",
+            personalPreferences: chat?.personalPreferences || "",
+            goal: chat?.goal || ""
+        }
+    });
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
         if (e.key === "Enter" && !e.shiftKey && !isLoading) {
