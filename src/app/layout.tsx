@@ -11,9 +11,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <UserProvider>
           <SidebarProvider>
             <ChatsProvider>
-              <div className="flex w-full h-screen">
+              <div className="flex w-full h-dvh sm:h-screen">
                 <Sidebar />
-                <main className="flex flex-1 h-dvh sm:h-full overflow-hidden">
+                <main className="flex flex-1 overflow-hidden">
                   {children}
                 </main>
               </div>
