@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import { useContext, useEffect } from "react";
 import { ChatsContext } from "@/contexts/chatscontext";
 import { UserContext } from "@/contexts/usercontext";
+import MarkdownPreview from '@uiw/react-markdown-preview';
+
 
 export default function ChatMessages() {
     const { getChat, updateChat } = useContext(ChatsContext);
@@ -49,9 +51,7 @@ export default function ChatMessages() {
                                     <AvatarFallback className="bg-primary text-white">GH</AvatarFallback>
                                 </Avatar>
 
-                                <div className="bg-white p-3 rounded-lg shadow-sm max-w-sm lg:max-w-2xl">
-                                    {message.content}
-                                </div>
+                                <MarkdownPreview source={message.content} wrapperElement={{ "data-color-mode": "light" }} className="bg-white p-3 rounded-lg shadow-sm max-w-sm lg:max-w-2xl" />
                             </div>
                         )
                     } else if (message.role === 'assistant') {
@@ -62,9 +62,7 @@ export default function ChatMessages() {
                                     <AvatarFallback className="bg-primary text-white">SF</AvatarFallback>
                                 </Avatar>
 
-                                <div className="bg-white p-3 rounded-lg shadow-sm max-w-sm lg:max-w-2xl">
-                                    {message.content}
-                                </div>
+                                <MarkdownPreview source={message.content} wrapperElement={{ "data-color-mode": "light" }} className="bg-white p-3 rounded-lg shadow-sm max-w-sm lg:max-w-2xl" />
                             </div>
                         )
                     }
