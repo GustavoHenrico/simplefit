@@ -12,21 +12,24 @@ import { SidebarContext } from "@/contexts/sidebarcontext";
 import CreateChat from "@/app/chat/create-chat/index";
 import { ChatsContext } from "@/contexts/chatscontext";
 import { useRouter } from "next/navigation";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 export default function Sidebar() {
     const { isOpen } = useContext(SidebarContext);
-    return (
-        <>
-            <Drawer open={isOpen} direction='left' className="lg:hidden lg:invisible flex flex-col h-screen bg-card" overlayClassName="lg:hidden lg:invisible">
+    const isDesktop = useMediaQuery("(min-width: 768px)")
+
+    if (isDesktop) {
+        return (
+            <Drawer open={isOpen} direction='left' className="flex flex-col h-full bg-card">
                 <SidebarContent />
             </Drawer>
+        )
+    }
 
-            <aside className="hidden lg:flex flex-col h-full w-80 bg-card shadow-lg rounded-r-lg ">
-                <SidebarContent />
-            </aside>
-        </>
-
-
+    return (
+        <aside className="hidden lg:flex flex-col h-full w-80 bg-card shadow-lg rounded-r-lg ">
+            <SidebarContent />
+        </aside>
     )
 }
 
