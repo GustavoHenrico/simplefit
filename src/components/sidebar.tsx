@@ -9,7 +9,7 @@ import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 import { useContext } from "react";
 import { SidebarContext } from "@/contexts/sidebarcontext";
-import CreateChat from "@/app/chat/create-chat";
+import CreateChat from "@/app/chat/create-chat/index";
 import { ChatsContext } from "@/contexts/chatscontext";
 import { useRouter } from "next/navigation";
 
@@ -67,7 +67,7 @@ function SidebarContent() {
                 }
             </div>
 
-            <div className="flex flex-col gap-2 flex-1 p-5">
+            <div className="p-5">
                 <CreateChat>
                     <Button onClick={() => { setIsOpen(false) }} variant="ghost" className="flex gap-2 items-center text-primary p-2 hover:bg-background/90 hover:text-primary rounded-md text-sm font-semibold w-full justify-start">
                         <PlusCircle size={16} />
