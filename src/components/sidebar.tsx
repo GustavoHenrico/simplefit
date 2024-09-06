@@ -3,15 +3,15 @@
 import Image from "next/image";
 import Logo from '@/assets/logo.jpg';
 import Link from "next/link";
-import { MessageSquare, PanelRightOpen, PlusCircle, UserRoundCog } from "lucide-react";
+import { MessageSquare, PanelRightOpen, PlusCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { SidebarContext } from "@/contexts/sidebarcontext";
 import CreateChat from "@/app/chat/create-chat";
-import { Chat } from "@/models/chat";
 import { ChatsContext } from "@/contexts/chatscontext";
+import { useRouter } from "next/navigation";
 
 export default function Sidebar() {
     const { isOpen } = useContext(SidebarContext);
@@ -34,6 +34,12 @@ export default function Sidebar() {
 function SidebarContent() {
     const { setIsOpen, } = useContext(SidebarContext);
     const { getChats, isLoading } = useContext(ChatsContext);
+    const router = useRouter();
+
+    const handleLinkClick = (chatid: string) => {
+        setIsOpen(false);
+        router.push(`/chat/${chatid}`);
+    }
 
     return (
         <>
@@ -53,10 +59,10 @@ function SidebarContent() {
 
                     )) :
                     getChats().map((chat, index) => (
-                        <Link key={index} href={`/chat/${chat.id}`} className="flex gap-2 items-center p-2 hover:bg-background/90 hover:text-black/80 rounded-md text-sm font-semibold">
+                        <button key={index} onClick={() => { handleLinkClick(chat.id) }} className="flex gap-2 items-center p-2 hover:bg-background/90 hover:text-black/80 rounded-md text-sm font-semibold">
                             <MessageSquare size={16} />
                             {chat.name}
-                        </Link>
+                        </button>
                     ))
                 }
             </div>

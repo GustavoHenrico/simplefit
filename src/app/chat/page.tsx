@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from "@/components/ui/button";
-import CreateChat from "./create-chat";
+import CreateChat from "./create-chat/index";
 import { PanelRightClose, PanelRightOpen, PlusCircle } from "lucide-react";
 import Image from "next/image";
 import logoanimation from "@/assets/animation.jpg";
