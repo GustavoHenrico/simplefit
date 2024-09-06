@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { ChatsContext } from "@/contexts/chatscontext";
 import { cn } from "@/lib/utils";
 import { Chat } from "@/models/chat";
+import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import ReactTextareaAutosize from "react-textarea-autosize";
@@ -26,6 +27,7 @@ type DrawerCreateChatProps = {
 export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
     const form = useForm<FormSchema>();
     const { addChat, reloadChats } = useContext(ChatsContext);
+    const router = useRouter();
 
     const handleCreateChat = async (data: FormSchema) => {
         const newChat: Chat = {
@@ -39,6 +41,7 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
             messages: []
         }
         addChat(newChat);
+        router.push(`/chat/${newChat.id}`);
         setIsOpen(false);
         reloadChats();
     }
