@@ -39,9 +39,7 @@ export default function CreateChat({ children }: CreateChatProps) {
                 <DrawerHeader>
                     <DrawerTitle>Create new Chat</DrawerTitle>
                 </DrawerHeader>
-
                 <FormCreateChat setIsOpen={setOpen} />
-
             </DrawerContent>
         </Drawer>
     )

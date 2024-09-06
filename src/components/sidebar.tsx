@@ -17,7 +17,7 @@ export default function Sidebar() {
     const { isOpen } = useContext(SidebarContext);
     return (
         <>
-            <Drawer open={isOpen} direction='left' className="lg:hidden lg:invisible flex flex-col h-dvh sm:h-screen bg-card" overlayClassName="lg:hidden lg:invisible">
+            <Drawer open={isOpen} direction='left' className="lg:hidden lg:invisible flex flex-col h-screen bg-card" overlayClassName="lg:hidden lg:invisible">
                 <SidebarContent />
             </Drawer>
 
