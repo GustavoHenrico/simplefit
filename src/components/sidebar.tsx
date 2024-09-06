@@ -18,7 +18,7 @@ export default function Sidebar() {
     const { isOpen } = useContext(SidebarContext);
     const isDesktop = useMediaQuery("(min-width: 768px)")
 
-    if (isDesktop) {
+    if (!isDesktop) {
         return (
             <Drawer open={isOpen} direction='left' className="flex flex-col h-full bg-card">
                 <SidebarContent />
@@ -27,7 +27,7 @@ export default function Sidebar() {
     }
 
     return (
-        <aside className="hidden lg:flex flex-col h-full w-80 bg-card shadow-lg rounded-r-lg ">
+        <aside className="flex flex-col h-full w-80 bg-card shadow-lg rounded-r-lg ">
             <SidebarContent />
         </aside>
     )

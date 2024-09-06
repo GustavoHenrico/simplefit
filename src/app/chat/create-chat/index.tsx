@@ -20,7 +20,7 @@ export default function CreateChat({ children }: CreateChatProps) {
                 <DialogTrigger asChild>
                     {children}
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-2xl max-h-dvh bg-white">
+                <DialogContent className="max-w-2xl max-h-dvh bg-white">
                     <DialogHeader>
                         <DialogTitle>Create new Chat</DialogTitle>
                     </DialogHeader>
