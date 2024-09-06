@@ -15,7 +15,7 @@ export default function CreateUser() {
 
     if (isDesktop) {
         return (
-            <Dialog open={open} onOpenChange={setOpen}>
+            <Dialog open={open}>
                 <DialogContent className="max-w-2xl p-0 bg-white">
                     <DialogHeader className="flex items-center justify-center p-5">
                         <DialogTitle>Welcome to SimpleFit!</DialogTitle>
@@ -30,7 +30,7 @@ export default function CreateUser() {
     }
 
     return (
-        <Drawer open={open} onOpenChange={setOpen}>
+        <Drawer open={open}>
             <DrawerContent className="bg-white max-h-dvh">
                 <DrawerHeader>
                     <DrawerTitle>Welcome to SimpleFit!</DrawerTitle>

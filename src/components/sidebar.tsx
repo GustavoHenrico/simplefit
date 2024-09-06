@@ -54,7 +54,7 @@ function SidebarContent() {
                 </Button>
             </div>
 
-            <div className="h-full flex flex-col space-y-3 overflow-y-auto p-5">
+            <div className="flex-1 flex flex-col space-y-3 overflow-y-auto p-5">
                 {isLoading ?
                     Array.from({ length: 5 }).map((_, index) => (
                         <div key={index} className="bg-background/90 animate animate-pulse h-8 rounded-md" />
