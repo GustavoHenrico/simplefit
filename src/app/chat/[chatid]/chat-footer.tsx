@@ -40,6 +40,7 @@ export default function ChatFooter() {
                 <ReactTextareaAutosize
                     value={input}
                     minRows={1}
+                    placeholder="Digite aqui sua mensagem..."
                     maxRows={10}
                     onKeyDown={handleKeyDown}
                     onChange={handleInputChange}
