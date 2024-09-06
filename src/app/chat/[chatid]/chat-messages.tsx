@@ -3,7 +3,7 @@ import { useChat } from "ai/react";
 import { useParams } from "next/navigation";
 import IaProfile from "@/assets/profile.jpg";
 import { cn } from "@/lib/utils";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ChatsContext } from "@/contexts/chatscontext";
 import { UserContext } from "@/contexts/usercontext";
 import MarkdownPreview from '@uiw/react-markdown-preview';
@@ -13,6 +13,7 @@ export default function ChatMessages() {
     const { getChat, updateChat } = useContext(ChatsContext);
     const { chatid } = useParams();
     const { getUser } = useContext(UserContext);
+    const divRef = useRef<HTMLDivElement>(null);
     const chat = getChat(chatid.toString());
     const { messages } = useChat({
         id: chat?.id,
@@ -34,12 +35,13 @@ export default function ChatMessages() {
                 updateChat({ ...chat, messages: messages });
             }
         }, 1000);
+        divRef?.current?.scrollIntoView({ behavior: "smooth" });
         return () => clearTimeout(timeoutId);
     }, [messages, chatid]);
 
 
     return (
-        <div className="h-full flex-1 w-full flex flex-col-reverse overflow-auto justify-center items-center [overflow-anchor:auto] ">
+        <div className="h-full flex-1 w-full flex flex-col-reverse overflow-auto justify-center items-center">
             <div className="flex flex-col justify-end mx-auto max-w-5xl w-full h-full space-y-6 my-16 p-1 lg:p-0">
                 {messages.map((message, index) => {
                     if (message.role === "user") {
@@ -66,6 +68,7 @@ export default function ChatMessages() {
                         )
                     }
                 })}
+                <div ref={divRef} />
             </div>
         </div>
     )

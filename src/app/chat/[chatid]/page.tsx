@@ -13,8 +13,6 @@ import { useChat } from "ai/react";
 export default function ChatItem() {
     const { isLoading } = useContext(ChatsContext);
 
-
-
     if (isLoading) {
         return (
             <div className="flex justify-center items-center h-full w-full">
