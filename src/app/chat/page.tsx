@@ -11,13 +11,13 @@ import { SidebarContext } from "@/contexts/sidebarcontext";
 export default function Chat() {
     const { isOpen, setIsOpen } = useContext(SidebarContext)
     return (
-        <div className="flex flex-col h-screen w-full">
+        <div className="flex flex-col h-dvh sm:h-screen w-full">
             <div className="p-2">
                 <Button onClick={() => { setIsOpen(!isOpen) }} size="icon" variant="ghost" className="hover:text-primary lg:hidden">
                     {isOpen ? <PanelRightOpen size={16} /> : <PanelRightClose size={16} />}
                 </Button>
             </div>
-            <div className="flex flex-col h-screen w-full justify-center items-center">
+            <div className="flex flex-col h-full w-full justify-center items-center">
                 <Image width={100} src={logoanimation} alt="Logo animation" className="motion-safe:animate-[smoothBounce_1s_ease-in-out_infinite]" />
 
                 <div className="flex flex-col gap-4 items-center">
