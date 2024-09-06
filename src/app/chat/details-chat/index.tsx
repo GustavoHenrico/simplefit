@@ -3,14 +3,15 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { useState } from "react";
-import FormCreateChat from "./form-create-chat";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import FormDetailsChat from "./form-create-chat";
 
 type CreateChatProps = {
     children: React.ReactNode;
+    chatid: string
 }
 
-export default function CreateChat({ children }: CreateChatProps) {
+export default function DetailsChat({ children, chatid }: CreateChatProps) {
     const [open, setOpen] = useState(false)
     const isDesktop = useMediaQuery("(min-width: 768px)")
 
@@ -22,9 +23,9 @@ export default function CreateChat({ children }: CreateChatProps) {
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-2xl sm:h-sm md:h-md lg:h-lg bg-white">
                     <DialogHeader>
-                        <DialogTitle>Create new Chat</DialogTitle>
+                        <DialogTitle>Details Chat</DialogTitle>
                     </DialogHeader>
-                    <FormCreateChat setIsOpen={setOpen} />
+                    <FormDetailsChat chatid={chatid} setIsOpen={setOpen} />
                 </DialogContent>
             </Dialog>
         )
@@ -37,9 +38,9 @@ export default function CreateChat({ children }: CreateChatProps) {
             </DrawerTrigger>
             <DrawerContent className="bg-white max-h-dvh">
                 <DrawerHeader>
-                    <DrawerTitle>Create new Chat</DrawerTitle>
+                    <DrawerTitle>Details Chat</DrawerTitle>
                 </DrawerHeader>
-                <FormCreateChat setIsOpen={setOpen} />
+                <FormDetailsChat chatid={chatid} setIsOpen={setOpen} />
             </DrawerContent>
         </Drawer>
     )

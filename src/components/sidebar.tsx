@@ -44,7 +44,7 @@ function SidebarContent() {
     return (
         <>
             <div className="flex justify-between pr-4 lg:justify-center items-center">
-                <div className="flex justify-center items-center w-full">
+                <div onClick={() => { router.push("/chat") }} className="flex justify-center items-center w-full">
                     <Image className="w-24 lg:w-36" src={Logo} alt="Logo" />
                 </div>
                 <Button onClick={() => { setIsOpen(false) }} size="icon" variant="ghost" className="hover:text-primary lg:hidden">

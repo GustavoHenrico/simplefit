@@ -10,7 +10,6 @@
         "postcss.config.mjs": true,
         "next.config.mjs": true,
         "next-env.d.ts": true,
-        "package.json": true,
         "node_modules": true,
         ".vscode": true,
         "components.json": true
@@ -20,9 +19,9 @@
         "postcss.config.mjs",
         "next.config.mjs",
         "next-env.d.ts",
-        "package.json",
         "node_modules",
         ".vscode",
-        "components.json"
+        "components.json",
+        "package.json"
     ]
 }
