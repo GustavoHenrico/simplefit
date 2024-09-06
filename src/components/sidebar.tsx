@@ -20,8 +20,10 @@ export default function Sidebar() {
 
     if (!isDesktop) {
         return (
-            <Drawer open={isOpen} direction='left' className="flex flex-col bg-card">
-                <SidebarContent />
+            <Drawer open={isOpen} direction='left'>
+                <div className="flex flex-col justify-between h-dvh w-full">
+                    <SidebarContent />
+                </div>
             </Drawer>
         )
     }
