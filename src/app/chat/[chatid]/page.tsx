@@ -14,7 +14,7 @@ export default function ChatItem() {
     const { isLoading, getChat } = useContext(ChatsContext);
     const { chatid } = useParams();
     const chat = getChat(chatid.toString());
-    console.log(chat)
+
     if (isLoading) {
         return (
             <div className="flex justify-center items-center h-full w-full">
@@ -29,8 +29,8 @@ export default function ChatItem() {
 
     if (!chat) {
         return (
-            <div className="flex justify-center items-center h-full w-full">
-                <h1 className="text-xl font-semibold">Parece que o chat fugiu de vista!</h1>
+            <div className="flex flex-col justify-center items-center h-full w-full">
+                <h1 className="text-xl font-semibold">Chat não econtrado!</h1>
                 <span>Não te preocupes, começa um novo ou retoma a conversa anterior!</span>
             </div>
         )
