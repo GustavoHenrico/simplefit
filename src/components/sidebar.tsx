@@ -11,8 +11,9 @@ import { useContext } from "react";
 import { SidebarContext } from "@/contexts/sidebarcontext";
 import CreateChat from "@/app/chat/create-chat/index";
 import { ChatsContext } from "@/contexts/chatscontext";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { cn } from "@/lib/utils";
 
 export default function Sidebar() {
     const { isOpen } = useContext(SidebarContext);
@@ -39,7 +40,8 @@ export default function Sidebar() {
 function SidebarContent() {
     const { setIsOpen, } = useContext(SidebarContext);
     const { getChats, isLoading } = useContext(ChatsContext);
-    const router = useRouter();
+    const location = usePathname();
+
 
     const hadleCloseSideBar = () => {
         setIsOpen(false);
@@ -63,13 +65,13 @@ function SidebarContent() {
 
                     )) :
                     getChats().map((chat, index) => (
-                        <Link href={`/chat/${chat.id}`} key={index} onClick={() => { hadleCloseSideBar() }} className="flex gap-2 items-center p-2 hover:bg-background/90 hover:text-black/80 rounded-md text-sm font-semibold">
+                        <Link href={`/chat/${chat.id}`} key={index} onClick={() => { hadleCloseSideBar() }} className={cn("flex gap-2 items-center p-2 hover:bg-background/90 hover:text-black/80 rounded-md text-sm font-semibold", { "bg-background/90 text-black/80": location === `/chat/${chat.id}` })}>
                             <MessageSquare size={16} />
                             {chat.name}
                         </Link>
                     ))
                 }
-            </div>
+            </div >
 
             <div className="p-5">
                 <CreateChat>
