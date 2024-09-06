@@ -21,7 +21,7 @@ export default function Sidebar() {
 
     if (!isDesktop) {
         return (
-            <Drawer open={isOpen} direction='left'>
+            <Drawer customIdSuffix="drawer" open={isOpen} direction='left' >
                 <div className="flex flex-col justify-between h-dvh w-full">
                     <SidebarContent />
                 </div>
