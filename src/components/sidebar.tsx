@@ -37,8 +37,8 @@ function SidebarContent() {
     const router = useRouter();
 
     const handleLinkClick = (chatid: string) => {
-        setIsOpen(false);
         router.push(`/chat/${chatid}`);
+        setIsOpen(false);
     }
 
     return (
