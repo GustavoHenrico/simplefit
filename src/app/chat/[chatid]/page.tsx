@@ -29,6 +29,7 @@ export default function ChatItem() {
 
     return (
         <div className="flex flex-col h-full w-full gap-3">
+            <ChatHeader />
             <ChatMessages />
             <ChatFooter />
         </div>
