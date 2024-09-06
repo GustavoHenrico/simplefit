@@ -75,7 +75,7 @@ function SidebarContent() {
                 <CreateChat>
                     <Button onClick={() => { setIsOpen(false) }} variant="ghost" className="flex gap-2 items-center text-primary p-2 hover:bg-background/90 hover:text-primary rounded-md text-sm font-semibold w-full justify-start">
                         <PlusCircle size={16} />
-                        Create new Chat
+                        Criar um novo Chat
                     </Button>
                 </CreateChat>
             </div>

@@ -34,23 +34,22 @@ export default function FormCreateUser({ setIsOpen }: FormCreateUserProps) {
                     name="name"
                     render={({ field, fieldState }) => (
                         <FormItem>
-                            <FormLabel>Name*</FormLabel>
+                            <FormLabel>Nome*</FormLabel>
                             <FormControl>
                                 <Input required {...field} />
                             </FormControl>
                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
-                                {fieldState.error?.message ? fieldState.error.message : "This won't be public. It's just for you."}
+                                {fieldState.error?.message ? fieldState.error.message : "Este nome é apenas para sua identificação, não será público."}
                             </FormDescription>
                         </FormItem>
                     )}
                 />
 
                 <DialogFooter>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit">Enviar</Button>
                 </DialogFooter>
             </form>
         </Form>
-
     )
 }
 

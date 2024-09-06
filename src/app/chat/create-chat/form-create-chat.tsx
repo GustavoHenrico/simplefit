@@ -53,12 +53,12 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                     name="name"
                     render={({ field, fieldState }) => (
                         <FormItem>
-                            <FormLabel>Chat Name*</FormLabel>
+                            <FormLabel>Nome do Chat*</FormLabel>
                             <FormControl>
                                 <Input autoFocus={false} required {...field} />
                             </FormControl>
                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
-                                {fieldState.error?.message ? fieldState.error.message : "  Enter the name that will be displayed to other chat participants."}
+                                {fieldState.error?.message ? fieldState.error.message : "Informe um nome para identificar este chat."}
                             </FormDescription>
                         </FormItem>
                     )}
@@ -69,7 +69,7 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                     name="level"
                     render={({ field, fieldState }) => (
                         <FormItem>
-                            <FormLabel>Fitness Level*</FormLabel>
+                            <FormLabel>Nível de Condicionamento Físico*</FormLabel>
                             <FormControl>
                                 <Select required value={field.value} onValueChange={field.onChange}>
                                     <SelectTrigger>
@@ -77,15 +77,15 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                                     </SelectTrigger>
                                     <SelectContent>
                                         <SelectGroup>
-                                            <SelectItem value="beginner">Beginner</SelectItem>
-                                            <SelectItem value="intermediate">Intermediate</SelectItem>
-                                            <SelectItem value="advanced">Advanced</SelectItem>
+                                            <SelectItem value="beginner">Iniciante</SelectItem>
+                                            <SelectItem value="intermediate">Intermediário</SelectItem>
+                                            <SelectItem value="advanced">Avançado</SelectItem>
                                         </SelectGroup>
                                     </SelectContent>
                                 </Select>
                             </FormControl>
                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
-                                {fieldState.error?.message ? fieldState.error.message : "Select your fitness level."}
+                                {fieldState.error?.message ? fieldState.error.message : "Selecione o seu nível de condicionamento físico."}
                             </FormDescription>
                         </FormItem>
                     )}
@@ -96,7 +96,7 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                     name="frequency"
                     render={({ field, fieldState }) => (
                         <FormItem>
-                            <FormLabel>Training Frequency*</FormLabel>
+                            <FormLabel>Frequência de Treinamento*</FormLabel>
                             <FormControl>
                                 <Select required onValueChange={e => field.onChange(parseInt(e))}>
                                     <SelectTrigger>
@@ -116,7 +116,7 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                                 </Select>
                             </FormControl>
                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
-                                {fieldState.error?.message ? fieldState.error.message : "Indicate how many times per week you train."}
+                                {fieldState.error?.message ? fieldState.error.message : "Indique quantas vezes por semana você treina."}
                             </FormDescription>
                         </FormItem>
                     )}
@@ -127,7 +127,7 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                     name="medicalConditions"
                     render={({ field, fieldState }) => (
                         <FormItem>
-                            <FormLabel>Medical Conditions or Restrictions</FormLabel>
+                            <FormLabel>Condições Médicas ou Restrições</FormLabel>
                             <FormControl>
                                 <ReactTextareaAutosize
                                     {...field}
@@ -137,7 +137,7 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                                 />
                             </FormControl>
                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
-                                {fieldState.error?.message ? fieldState.error.message : "Please provide any medical conditions or restrictions that we should be aware of."}
+                                {fieldState.error?.message ? fieldState.error.message : "Informe qualquer condição médica ou restrição que devemos estar cientes."}
                             </FormDescription>
                         </FormItem>
                     )}
@@ -148,7 +148,7 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                     name="personalPreferences"
                     render={({ field, fieldState }) => (
                         <FormItem>
-                            <FormLabel>Personal Preferences</FormLabel>
+                            <FormLabel>Preferências Pessoais</FormLabel>
                             <FormControl>
                                 <ReactTextareaAutosize
                                     {...field}
@@ -158,7 +158,7 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                                 />
                             </FormControl>
                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
-                                {fieldState.error?.message ? fieldState.error.message : "Share any personal preferences you would like us to know."}
+                                {fieldState.error?.message ? fieldState.error.message : "Compartilhe qualquer preferência pessoal que gostaria que soubéssemos."}
                             </FormDescription>
                         </FormItem>
                     )}
@@ -169,7 +169,7 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                     name="goal"
                     render={({ field, fieldState }) => (
                         <FormItem>
-                            <FormLabel>Objective</FormLabel>
+                            <FormLabel>Objetivo</FormLabel>
                             <FormControl>
                                 <ReactTextareaAutosize
                                     {...field}
@@ -179,17 +179,17 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                                 />
                             </FormControl>
                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
-                                {fieldState.error?.message ? fieldState.error.message : "Share your goal with training."}
+                                {fieldState.error?.message ? fieldState.error.message : "Compartilhe o seu objetivo com o treinamento."}
                             </FormDescription>
                         </FormItem>
                     )}
                 />
 
-
                 <DialogFooter>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit">Enviar</Button>
                 </DialogFooter>
             </form>
         </Form>
+
     )
 }

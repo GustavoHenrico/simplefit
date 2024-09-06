@@ -23,7 +23,7 @@ export default function DetailsChat({ children, chatid }: CreateChatProps) {
                 </DialogTrigger>
                 <DialogContent className="max-w-2xl max-h-dvh-minus-80px h-full p-0 bg-white">
                     <DialogHeader className="flex items-center justify-center p-5">
-                        <DialogTitle>Details Chat</DialogTitle>
+                        <DialogTitle>Detalhes do Chat</DialogTitle>
                     </DialogHeader>
                     <div className="h-full w-full overflow-auto p-5">
                         <FormDetailsChat chatid={chatid} setIsOpen={setOpen} />
@@ -40,7 +40,7 @@ export default function DetailsChat({ children, chatid }: CreateChatProps) {
             </DrawerTrigger>
             <DrawerContent className="bg-white max-h-dvh">
                 <DrawerHeader>
-                    <DrawerTitle>Details Chat</DrawerTitle>
+                    <DrawerTitle>Detalhes do Chat</DrawerTitle>
                 </DrawerHeader>
                 <div className="h-full w-full overflow-auto p-5">
                     <FormDetailsChat chatid={chatid} setIsOpen={setOpen} />

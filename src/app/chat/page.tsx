@@ -21,14 +21,17 @@ export default function Chat() {
                 <Image width={100} src={logoanimation} alt="Logo animation" className="motion-safe:animate-[smoothBounce_1s_ease-in-out_infinite]" />
 
                 <div className="flex flex-col gap-4 items-center">
-                    <h1 className="text-xl font-semibold">First, create a new chat by clicking here.</h1>
+                    <h1 className="text-xl font-semibold"> Pronto para dar aquele gás?</h1>
+                    <span>Comece um novo chat ou continue de onde parou!</span>
                     <CreateChat>
                         <Button variant="outline" className="gap-2 items-center flex">
                             <PlusCircle size={16} />
-                            Create new Chat
+                            Criar novo Chat
                         </Button>
                     </CreateChat>
                 </div>
+
+
             </div>
         </div>
     );

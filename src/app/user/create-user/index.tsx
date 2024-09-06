@@ -18,14 +18,15 @@ export default function CreateUser() {
             <Dialog open={open}>
                 <DialogContent className="max-w-2xl p-0 bg-white">
                     <DialogHeader className="flex items-center justify-center p-5">
-                        <DialogTitle>Welcome to SimpleFit!</DialogTitle>
-                        <DialogDescription>Enter your name to get started. This is just to personalize your experience.</DialogDescription>
+                        <DialogTitle>Bem-vindo ao SimpleFit!</DialogTitle>
+                        <DialogDescription>Digite seu nome para começar. Isso serve apenas para personalizar sua experiência.</DialogDescription>
                     </DialogHeader>
                     <div className="h-full w-full p-5">
                         <FormCreateUser setIsOpen={setOpen} />
                     </div>
                 </DialogContent>
             </Dialog>
+
         )
     }
 
@@ -33,8 +34,8 @@ export default function CreateUser() {
         <Drawer open={open}>
             <DrawerContent className="bg-white max-h-dvh">
                 <DrawerHeader>
-                    <DrawerTitle>Welcome to SimpleFit!</DrawerTitle>
-                    <DrawerDescription>Enter your name to get started. This is just to personalize your experience.</DrawerDescription>
+                    <DrawerTitle>Bem-vindo ao SimpleFit!</DrawerTitle>
+                    <DrawerDescription>Digite seu nome para começar. Isso serve apenas para personalizar sua experiência.</DrawerDescription>
                 </DrawerHeader>
                 <div className="h-full w-full p-5">
                     <FormCreateUser setIsOpen={setOpen} />
