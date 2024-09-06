@@ -53,7 +53,7 @@ export default function CreateChat({ children }: CreateChatProps) {
             <DialogTrigger asChild>
                 {children}
             </DialogTrigger>
-            <DialogContent className="w-full sm:max-w-2xl bg-white">
+            <DialogContent className="w-full h-full sm:max-w-2xl xl:h-auto overflow-auto bg-white">
                 <DialogHeader>
                     <DialogTitle>Create new Chat</DialogTitle>
                 </DialogHeader>

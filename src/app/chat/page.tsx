@@ -18,7 +18,7 @@ export default function Chat() {
                 </Button>
             </div>
             <div className="flex flex-col h-screen w-full justify-center items-center">
-                <Image width={150} src={logoanimation} alt="Logo animation" className="motion-safe:animate-[smoothBounce_1s_ease-in-out_infinite]" />
+                <Image width={100} src={logoanimation} alt="Logo animation" className="motion-safe:animate-[smoothBounce_1s_ease-in-out_infinite]" />
 
                 <div className="flex flex-col gap-4 items-center">
                     <h1 className="text-xl font-semibold">First, create a new chat by clicking here.</h1>

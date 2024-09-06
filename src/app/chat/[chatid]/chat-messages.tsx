@@ -31,7 +31,6 @@ export default function ChatMessages() {
         const timeoutId = setTimeout(() => {
             const chat = getChat(chatid.toString());
             if (chat) {
-                console.log('updating chat', messages);
                 updateChat({ ...chat, messages: messages });
             }
         }, 1000);

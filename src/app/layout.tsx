@@ -34,8 +34,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 export function CheckUsingUser() {
   const { getUser } = useContext(UserContext);
 
-  console.log(getUser().name);
-
   return (
     <div>
       {!getUser().name && <CreateUser />}
