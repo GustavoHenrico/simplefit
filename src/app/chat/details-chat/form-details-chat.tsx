@@ -6,7 +6,6 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { ChatsContext } from "@/contexts/chatscontext";
 import { cn } from "@/lib/utils";
 import { Chat } from "@/models/chat";
-import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import ReactTextareaAutosize from "react-textarea-autosize";
@@ -20,34 +19,46 @@ type FormSchema = {
     goal: string;
 }
 
-type DrawerCreateChatProps = {
+type DrawerDetailsChatProps = {
     setIsOpen: (isOpen: boolean) => void;
+    chatid: string;
 }
 
-export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
-    const form = useForm<FormSchema>();
-    const { addChat, reloadChats } = useContext(ChatsContext);
-    const router = useRouter();
+export default function FormDetailsChat({ setIsOpen, chatid }: DrawerDetailsChatProps) {
+    const { updateChat, reloadChats, getChat } = useContext(ChatsContext);
+    const chat = getChat(chatid);
 
-    const handleCreateChat = async (data: FormSchema) => {
+    const form = useForm<FormSchema>({
+        values: {
+            name: chat?.name || "",
+            level: chat?.level || "beginner",
+            frequency: chat?.frequency || 1,
+            goal: chat?.goal || "",
+            medicalConditions: chat?.medicalConditions || "",
+            personalPreferences: chat?.personalPreferences || ""
+        }
+    });
+
+    const handleUpdateChat = async (data: FormSchema) => {
         const newChat: Chat = {
-            id: Math.random().toString(36).substr(2, 9),
+            id: chat?.id || "",
             name: data.name,
             level: data.level,
             frequency: data.frequency,
             medicalConditions: data.medicalConditions,
             personalPreferences: data.personalPreferences,
             goal: data.goal,
-            messages: []
+            messages: chat?.messages || []
         }
-        addChat(newChat);
-        router.push(`/chat/${newChat.id}`);
+        updateChat(newChat);
         setIsOpen(false);
         reloadChats();
     }
+
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(handleCreateChat)} className="w-full space-y-3">
+
+            <form onSubmit={form.handleSubmit(handleUpdateChat)} className="w-full space-y-3">
                 <FormField
                     control={form.control}
                     name="name"
@@ -98,7 +109,7 @@ export default function FormCreateChat({ setIsOpen }: DrawerCreateChatProps) {
                         <FormItem>
                             <FormLabel>Training Frequency*</FormLabel>
                             <FormControl>
-                                <Select required onValueChange={e => field.onChange(parseInt(e))}>
+                                <Select required value={field.value.toString()} onValueChange={e => field.onChange(parseInt(e))}>
                                     <SelectTrigger>
                                         <SelectValue />
                                     </SelectTrigger>

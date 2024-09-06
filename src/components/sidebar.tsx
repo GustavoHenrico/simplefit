@@ -39,8 +39,7 @@ function SidebarContent() {
     const { getChats, isLoading } = useContext(ChatsContext);
     const router = useRouter();
 
-    const handleLinkClick = (chatid: string) => {
-        router.push(`/chat/${chatid}`);
+    const hadleCloseSideBar = () => {
         setIsOpen(false);
     }
 
@@ -62,10 +61,10 @@ function SidebarContent() {
 
                     )) :
                     getChats().map((chat, index) => (
-                        <button key={index} onClick={() => { handleLinkClick(chat.id) }} className="flex gap-2 items-center p-2 hover:bg-background/90 hover:text-black/80 rounded-md text-sm font-semibold">
+                        <Link href={`/chat/${chat.id}`} key={index} onClick={() => { hadleCloseSideBar() }} className="flex gap-2 items-center p-2 hover:bg-background/90 hover:text-black/80 rounded-md text-sm font-semibold">
                             <MessageSquare size={16} />
                             {chat.name}
-                        </button>
+                        </Link>
                     ))
                 }
             </div>

@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { useState } from "react";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import FormDetailsChat from "./form-create-chat";
+import FormDetailsChat from "./form-details-chat";
 
 type CreateChatProps = {
     children: React.ReactNode;
@@ -21,11 +21,13 @@ export default function DetailsChat({ children, chatid }: CreateChatProps) {
                 <DialogTrigger asChild>
                     {children}
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-2xl sm:h-sm md:h-md lg:h-lg bg-white">
-                    <DialogHeader>
+                <DialogContent className="max-w-2xl max-h-dvh-minus-80px h-full p-0 bg-white">
+                    <DialogHeader className="flex items-center justify-center p-5">
                         <DialogTitle>Details Chat</DialogTitle>
                     </DialogHeader>
-                    <FormDetailsChat chatid={chatid} setIsOpen={setOpen} />
+                    <div className="h-full w-full overflow-auto p-5">
+                        <FormDetailsChat chatid={chatid} setIsOpen={setOpen} />
+                    </div>
                 </DialogContent>
             </Dialog>
         )
@@ -40,7 +42,9 @@ export default function DetailsChat({ children, chatid }: CreateChatProps) {
                 <DrawerHeader>
                     <DrawerTitle>Details Chat</DrawerTitle>
                 </DrawerHeader>
-                <FormDetailsChat chatid={chatid} setIsOpen={setOpen} />
+                <div className="h-full w-full overflow-auto p-5">
+                    <FormDetailsChat chatid={chatid} setIsOpen={setOpen} />
+                </div>
             </DrawerContent>
         </Drawer>
     )

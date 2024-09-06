@@ -9,14 +9,17 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			maxHeight: {
+				'dvh-minus-80px': 'calc(100dvh - 80px)',
+			},
 			keyframes: {
 				smoothBounce: {
-					'0%, 100%': { transform: 'translateY(0)' }, // Início e fim no ponto original
-					'50%': { transform: 'translateY(-10px)' },  // Meio do ciclo move-se para cima
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
 				},
 			},
 			animation: {
-				smoothBounce: 'smoothBounce 1s ease-in-out infinite', // Define a animação como infinita
+				smoothBounce: 'smoothBounce 1s ease-in-out infinite',
 			},
 			colors: {
 				background: 'hsl(var(--background))',

@@ -20,11 +20,13 @@ export default function CreateChat({ children }: CreateChatProps) {
                 <DialogTrigger asChild>
                     {children}
                 </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-dvh bg-white">
-                    <DialogHeader>
+                <DialogContent className="max-w-2xl max-h-dvh-minus-80px h-full p-0 bg-white">
+                    <DialogHeader className="flex items-center justify-center p-5">
                         <DialogTitle>Create new Chat</DialogTitle>
                     </DialogHeader>
-                    <FormCreateChat setIsOpen={setOpen} />
+                    <div className="h-full w-full overflow-auto p-5">
+                        <FormCreateChat setIsOpen={setOpen} />
+                    </div>
                 </DialogContent>
             </Dialog>
         )
@@ -39,7 +41,9 @@ export default function CreateChat({ children }: CreateChatProps) {
                 <DrawerHeader>
                     <DrawerTitle>Create new Chat</DrawerTitle>
                 </DrawerHeader>
-                <FormCreateChat setIsOpen={setOpen} />
+                <div className="h-full w-full overflow-auto p-5">
+                    <FormCreateChat setIsOpen={setOpen} />
+                </div>
             </DrawerContent>
         </Drawer>
     )
