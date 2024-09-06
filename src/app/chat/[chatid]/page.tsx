@@ -11,8 +11,10 @@ import { useChat } from "ai/react";
 
 
 export default function ChatItem() {
-    const { isLoading } = useContext(ChatsContext);
-
+    const { isLoading, getChat } = useContext(ChatsContext);
+    const { chatid } = useParams();
+    const chat = getChat(chatid.toString());
+    console.log(chat)
     if (isLoading) {
         return (
             <div className="flex justify-center items-center h-full w-full">
@@ -21,6 +23,15 @@ export default function ChatItem() {
                     <span className="size-3 rounded-full bg-slate-500 motion-safe:animate-[bounce_0.5s_ease-in-out_infinite]"></span>
                     <span className="size-3 rounded-full bg-slate-500 motion-safe:animate-[bounce_1s_ease-in-out_infinite]"></span>
                 </div>
+            </div>
+        )
+    }
+
+    if (!chat) {
+        return (
+            <div className="flex justify-center items-center h-full w-full">
+                <h1 className="text-xl font-semibold">Parece que o chat fugiu de vista!</h1>
+                <span>Não te preocupes, começa um novo ou retoma a conversa anterior!</span>
             </div>
         )
     }
