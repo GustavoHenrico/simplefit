@@ -76,9 +76,9 @@ export default function CreateUser() {
                     <DrawerTitle>Bem-vindo ao SimpleFit!</DrawerTitle>
                     <DrawerDescription>Digite seu nome para começar. Isso serve apenas para personalizar sua experiência.</DrawerDescription>
                 </DrawerHeader>
-                <div className="h-full w-full p-5">
+                <div className="h-full p-5">
                     <Form {...form}>
-                        <form onSubmit={form.handleSubmit(handleCreateChat)} className="w-full space-y-3">
+                        <form onSubmit={form.handleSubmit(handleCreateChat)} className="space-y-3">
                             <FormField
                                 control={form.control}
                                 name="name"
