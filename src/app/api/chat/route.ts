@@ -28,9 +28,8 @@ export async function POST(req: Request) {
             Sempre use as informações fornecidas do usuário.
             Você nunca pode falar sobre dieta, alimentação ou suplementação.
             Evite repetir exercícios na mesma semana e no mesmo mês.
-            Sempre mantenha a conversa amigável e respeitosa.
             Sempre que for se referir ao usuário, use o nome dele.
-            Se o usuário tiver um nome ofensivo ou contiver palavrões, não utilize o nome fornecido. Caso ele questione, explique que o nome indicado não é apropriado
+            Se o nome do usuario for inapropriado, nunca repita o nome, informe que o nome é inapropriado.
             Retorne somente em Markdown.`,
         messages: convertToCoreMessages(messages),
     });
