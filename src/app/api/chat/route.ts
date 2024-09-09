@@ -30,6 +30,7 @@ export async function POST(req: Request) {
             Evite repetir exercícios na mesma semana e no mesmo mês.
             Sempre mantenha a conversa amigável e respeitosa.
             Sempre que for se referir ao usuário, use o nome dele.
+Se o usuário tiver um nome ofensivo ou contiver palavrões, não utilize o nome fornecido. Caso ele questione, explique que o nome indicado não é apropriado
             Retorne somente em Markdown.`,
         messages: convertToCoreMessages(messages),
     });
