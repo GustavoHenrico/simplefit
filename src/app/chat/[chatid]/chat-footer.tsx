@@ -14,7 +14,7 @@ export default function ChatFooter() {
     const { getUser } = useContext(UserContext);
     const chat = getChat(chatid.toString());
 
-    const { input, handleInputChange, handleSubmit, isLoading } = useChat({
+    const { input, handleInputChange, handleSubmit, isLoading, stop } = useChat({
         id: chatid.toString(),
         initialMessages: chat?.messages,
         body: {
@@ -50,7 +50,7 @@ export default function ChatFooter() {
                 <div className="flex items-end">
                     <div className="flex justify-center items-center h-12">
                         {isLoading ? (
-                            <Button size="icon">
+                            <Button onClick={stop} size="icon">
                                 <CirclePause size={20} />
                             </Button>
                         ) : (
