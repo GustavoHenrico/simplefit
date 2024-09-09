@@ -7,7 +7,7 @@ export async function POST(req: Request) {
     const { messages, userName, level, frequency, medicalConditions, personalPreferences, goal } = await req.json();
 
     const result = await streamText({
-        model: openai('gpt-3.5-turbo'),
+        model: openai('gpt-4'),
         system: `
             Seu nome é SimpleFit Bot, 
             Você é um assistente criado exclusivamente para elaborar rotinas de exercícios para os usuários.
