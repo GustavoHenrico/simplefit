@@ -49,7 +49,7 @@ export default function ChatMessages() {
                             <div key={message.id} className={cn("flex gap-1 flex-row-reverse items-center", { "items-start": message.content.length > 80 })}>
                                 <Avatar>
                                     <AvatarImage src="" alt="" />
-                                    <AvatarFallback className="bg-primary text-white">GH</AvatarFallback>
+                                    <AvatarFallback className="bg-primary text-white">{getUser().name.substring(0, 2)}</AvatarFallback>
                                 </Avatar>
 
                                 <MarkdownPreview source={message.content} wrapperElement={{ "data-color-mode": "light" }} className="bg-white p-3 rounded-lg shadow-sm max-w-sm lg:max-w-2xl" />
