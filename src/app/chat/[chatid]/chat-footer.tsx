@@ -44,7 +44,7 @@ export default function ChatFooter() {
                     maxRows={10}
                     onKeyDown={handleKeyDown}
                     onChange={handleInputChange}
-                    className="border-input px-5 py-3 shadow-sm placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 w-full border rounded-md resize-none"
+                    className="border-input px-5 py-3 text-base shadow-sm placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 w-full border rounded-md resize-none"
                 />
 
                 <div className="flex items-end">

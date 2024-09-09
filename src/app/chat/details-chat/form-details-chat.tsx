@@ -66,7 +66,7 @@ export default function FormDetailsChat({ setIsOpen, chatid }: DrawerDetailsChat
                         <FormItem>
                             <FormLabel>Nome do Chat*</FormLabel>
                             <FormControl>
-                                <Input autoFocus={false} required {...field} />
+                                <Input autoFocus={false} required {...field} className="text-base" />
                             </FormControl>
                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
                                 {fieldState.error?.message ? fieldState.error.message : "Informe um nome para identificar este chat."}
@@ -84,9 +84,9 @@ export default function FormDetailsChat({ setIsOpen, chatid }: DrawerDetailsChat
                             <FormControl>
                                 <Select required value={field.value} onValueChange={field.onChange}>
                                     <SelectTrigger>
-                                        <SelectValue />
+                                        <SelectValue className="text-base" />
                                     </SelectTrigger>
-                                    <SelectContent>
+                                    <SelectContent className="text-base">
                                         <SelectGroup>
                                             <SelectItem value="beginner">Iniciante</SelectItem>
                                             <SelectItem value="intermediate">Intermediário</SelectItem>
@@ -111,9 +111,9 @@ export default function FormDetailsChat({ setIsOpen, chatid }: DrawerDetailsChat
                             <FormControl>
                                 <Select required value={field.value.toString()} onValueChange={e => field.onChange(parseInt(e))}>
                                     <SelectTrigger>
-                                        <SelectValue />
+                                        <SelectValue className="text-base" />
                                     </SelectTrigger>
-                                    <SelectContent>
+                                    <SelectContent className="text-base">
                                         <SelectGroup>
                                             <SelectItem value="1">1</SelectItem>
                                             <SelectItem value="2">2</SelectItem>
@@ -144,7 +144,7 @@ export default function FormDetailsChat({ setIsOpen, chatid }: DrawerDetailsChat
                                     {...field}
                                     minRows={1}
                                     maxRows={10}
-                                    className="border-input px-5 py-5 text-sm shadow-sm placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 w-full border rounded-md resize-none"
+                                    className="border-input px-5 py-5 text-base shadow-sm placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 w-full border rounded-md resize-none"
                                 />
                             </FormControl>
                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
@@ -165,7 +165,7 @@ export default function FormDetailsChat({ setIsOpen, chatid }: DrawerDetailsChat
                                     {...field}
                                     minRows={1}
                                     maxRows={10}
-                                    className="border-input px-5 py-5 text-sm shadow-sm placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 w-full border rounded-md resize-none"
+                                    className="border-input px-5 py-5 text-base shadow-sm placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 w-full border rounded-md resize-none"
                                 />
                             </FormControl>
                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
@@ -186,7 +186,7 @@ export default function FormDetailsChat({ setIsOpen, chatid }: DrawerDetailsChat
                                     {...field}
                                     minRows={1}
                                     maxRows={10}
-                                    className="border-input px-5 py-5 text-sm shadow-sm placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 w-full border rounded-md resize-none"
+                                    className="border-input px-5 py-5 text-base shadow-sm placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 w-full border rounded-md resize-none"
                                 />
                             </FormControl>
                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>

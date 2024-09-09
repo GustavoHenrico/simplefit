@@ -48,7 +48,7 @@ export default function CreateUser() {
                                         <FormItem>
                                             <FormLabel>Nome*</FormLabel>
                                             <FormControl>
-                                                <Input required {...field} />
+                                                <Input required {...field} className="text-base" />
                                             </FormControl>
                                             <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
                                                 {fieldState.error?.message ? fieldState.error.message : "Este nome é apenas para sua identificação, não será público."}
@@ -86,7 +86,7 @@ export default function CreateUser() {
                                     <FormItem>
                                         <FormLabel>Nome*</FormLabel>
                                         <FormControl>
-                                            <Input required {...field} />
+                                            <Input required {...field} className="text-base" />
                                         </FormControl>
                                         <FormDescription className={cn({ "text-red-600": fieldState.error?.message })}>
                                             {fieldState.error?.message ? fieldState.error.message : "Este nome é apenas para sua identificação, não será público."}
@@ -95,7 +95,7 @@ export default function CreateUser() {
                                 )}
                             />
 
-                            <DrawerFooter>
+                            <DrawerFooter className="px-0 w-full">
                                 <Button type="submit">Enviar</Button>
                             </DrawerFooter>
                         </form>
