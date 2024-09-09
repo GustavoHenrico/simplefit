@@ -71,7 +71,7 @@ export default function CreateUser() {
 
     return (
         <Drawer open={open}>
-            <DrawerContent className="bg-white max-h-dvh">
+            <DrawerContent className="bg-white max-h-dvh h-full">
                 <DrawerHeader>
                     <DrawerTitle>Bem-vindo ao SimpleFit!</DrawerTitle>
                     <DrawerDescription>Digite seu nome para começar. Isso serve apenas para personalizar sua experiência.</DrawerDescription>
