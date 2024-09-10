@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ChatsContext } from "@/contexts/chatscontext";
 import { UserContext } from "@/contexts/usercontext";
 import { useChat } from "ai/react";
-import { CirclePause, Send, SendHorizontal } from "lucide-react";
+import { CirclePause, SendHorizontal } from "lucide-react";
 import { useParams } from "next/navigation";
 import { useContext } from "react";
 import ReactTextareaAutosize from "react-textarea-autosize";
