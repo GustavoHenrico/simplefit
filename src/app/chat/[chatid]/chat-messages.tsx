@@ -43,7 +43,7 @@ export default function ChatMessages() {
     return (
         <div className="h-full flex-1 w-full flex flex-col-reverse overflow-auto justify-center items-center">
             <div className="flex flex-col justify-end mx-auto max-w-5xl w-full h-full space-y-6 my-16 p-1 lg:p-0">
-                {messages.map((message, index) => {
+                {messages.map((message) => {
                     if (message.role === "user") {
                         return (
                             <div key={message.id} className={cn("flex gap-1 flex-row-reverse items-center", { "items-start": message.content.length > 80 })}>
