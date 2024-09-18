@@ -3,8 +3,6 @@ import { ChatsProvider } from "@/contexts/chatscontext";
 import { SidebarProvider } from "@/contexts/sidebarcontext";
 import { UserProvider } from "@/contexts/usercontext";
 import "@/styles/globals.css";
-import { Viewport } from "next";
-
 
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

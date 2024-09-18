@@ -15,6 +15,8 @@ export default function ChatMessages() {
     const { getUser } = useContext(UserContext);
     const divRef = useRef<HTMLDivElement>(null);
     const chat = getChat(chatid.toString());
+
+
     const { messages } = useChat({
         id: chat?.id,
         initialMessages: chat?.messages,

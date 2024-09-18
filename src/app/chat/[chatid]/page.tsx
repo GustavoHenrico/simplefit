@@ -3,16 +3,18 @@
 import ChatFooter from "./chat-footer";
 import ChatMessages from "./chat-messages";
 import ChatHeader from "../headerbar";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { ChatsContext } from "@/contexts/chatscontext";
 import { useContext } from "react";
-import { useChat } from "ai/react";
+import { Button } from "@/components/ui/button";
+import { ArrowBigLeft } from "lucide-react";
 
 
 
 export default function ChatItem() {
     const { isLoading, getChat } = useContext(ChatsContext);
     const { chatid } = useParams();
+    const router = useRouter();
     const chat = getChat(chatid.toString());
 
     if (isLoading) {
@@ -32,6 +34,10 @@ export default function ChatItem() {
             <div className="flex flex-col justify-center items-center h-full w-full">
                 <h1 className="text-xl font-semibold">Chat não econtrado!</h1>
                 <span>Não te preocupes, começa um novo ou retoma a conversa anterior!</span>
+                <Button onClick={() => { router.push("/") }} variant="outline" className="gap-2 items-center flex mt-5">
+                    <ArrowBigLeft size={16} />
+                    Voltar para a Home
+                </Button>
             </div>
         )
     }

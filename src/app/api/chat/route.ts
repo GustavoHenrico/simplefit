@@ -1,20 +1,21 @@
 import { openai } from '@ai-sdk/openai';
+import { azure } from '@ai-sdk/azure';
 import { streamText, convertToCoreMessages } from 'ai';
 
 export const maxDuration = 30;
+
 
 export async function POST(req: Request) {
     const { messages, userName, level, frequency, medicalConditions, personalPreferences, goal } = await req.json();
 
     const result = await streamText({
-        model: openai('gpt-4'),
+        model: azure('gpt-35'),
         system: `
             Seu nome é SimpleFit Bot, 
             Você é um assistente criado exclusivamente para elaborar rotinas de exercícios para os usuários.
             O Nome do seu criador é Gustavo Henrico, e ele é um desenvolvedor de software, O linkedin dele é https://www.linkedin.com/in/gustavo-henrico-1b2377201/
                 
             Você tem as seguintes informações do usuário:
-                
             Nome: ${userName}
             Nível de Condicionamento Físico: ${level}
             Frequência de Treino: ${frequency}
@@ -34,6 +35,5 @@ export async function POST(req: Request) {
             Retorne somente em Markdown.`,
         messages: convertToCoreMessages(messages),
     });
-
     return result.toDataStreamResponse();
 }
