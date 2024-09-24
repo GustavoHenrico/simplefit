@@ -36,7 +36,7 @@ Siga os passos abaixo para rodar o projeto localmente:
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/simplefit.git
+   git clone https://github.com/GustavoHenrico/simplefit.git
     ```
 2. Navegue até a pasta do projeto:
 
