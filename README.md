@@ -4,11 +4,8 @@ Este software foi desenvolvido como parte de um trabalho acadêmico na Universid
 
 # Demonstração
 
-<video width="320" height="240" controls>
-  <source src="./src/assets/simplefit-exemple.mp4" type="video/mp4">
-  Seu navegador não suporta o elemento de vídeo.
-</video>
-
+![Demonstração do SimpleFit](./src/assets/simplefit-exemple.png)
+*Se a imagem não carregar, você pode assistir ao [vídeo de demonstração](./src/assets/simplefit-exemple.mp4).*
 
 ## Tabela de recursos
 
