@@ -2,6 +2,14 @@
 
 Este software foi desenvolvido como parte de um trabalho acadêmico na Universidade Paulista (UNIP), para a disciplina de Projeto de Sistemas Orientados a Objetos. O objetivo do projeto é oferecer suporte aos usuários que desejam montar e gerenciar seus treinos de academia de forma personalizada, utilizando um bot de Inteligência Artificial (IA) avançado.
 
+
+<video width="320" height="240" controls>
+  <source src="./src/assets/simplefit-exemple.mp4" type="video/mp4">
+  Seu navegador não suporta o elemento de vídeo.
+</video>
+
+
+
 ## Tabela de recursos
 
 | Recursos                                                        | Implementado | Não implementado |
@@ -11,6 +19,7 @@ Este software foi desenvolvido como parte de um trabalho acadêmico na Universid
 | Criação de treinos personalizados com base nas informações do usuário | ✅           |                  |
 | Recomendações de dietas                                          |              | ❌               |
 | Recomendações de suplementação                                   |              | ❌               |
+
 
 ## ⚙️ Tech Stack
 
