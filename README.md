@@ -4,7 +4,7 @@ Este software foi desenvolvido como parte de um trabalho acadêmico na Universid
 
 # Demonstração
 
-![Demonstração do SimpleFit](./src/assets/simplefit-exemple.png)
+![Demonstração do SimpleFit](./src/assets/simplefit-exemple.mp4)
 *Se a imagem não carregar, você pode assistir ao [vídeo de demonstração](./src/assets/simplefit-exemple.mp4).*
 
 ## Tabela de recursos
