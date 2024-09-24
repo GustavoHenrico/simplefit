@@ -5,7 +5,6 @@ Este software foi desenvolvido como parte de um trabalho acadêmico na Universid
 # Demonstração
 
 ![Demonstração do SimpleFit](./src/assets/Simplefit-exemplo.gif)
-*Se a imagem não carregar, você pode assistir ao [vídeo de demonstração](./src/assets/Simplefit-exemplo.gif).*
 
 ## Tabela de recursos
 
