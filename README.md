@@ -72,4 +72,4 @@ Este projeto é licenciado sob a licença MIT - veja o arquivo LICENSE para mais
 
    ```bash
     Esse template cobre as instruções básicas, como variáveis de ambiente, como rodar a aplicação e como contribuir.
-    ```
+   ```
