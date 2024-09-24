@@ -1,4 +1,3 @@
-import { openai } from '@ai-sdk/openai';
 import { azure } from '@ai-sdk/azure';
 import { streamText, convertToCoreMessages } from 'ai';
 
