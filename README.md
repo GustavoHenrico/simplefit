@@ -4,8 +4,8 @@ Este software foi desenvolvido como parte de um trabalho acadêmico na Universid
 
 # Demonstração
 
-![Demonstração do SimpleFit](./src/assets/simplefit-exemple.mp4)
-*Se a imagem não carregar, você pode assistir ao [vídeo de demonstração](./src/assets/simplefit-exemple.mp4).*
+![Demonstração do SimpleFit](./src/assets/Simplefit-exemplo.gif)
+*Se a imagem não carregar, você pode assistir ao [vídeo de demonstração](./src/assets/Simplefit-exemplo.gif).*
 
 ## Tabela de recursos
 
@@ -76,6 +76,6 @@ Siga os passos abaixo para rodar o projeto localmente:
 
 Este projeto é licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
 
-   ```bash
+   ```
     Esse template cobre as instruções básicas, como variáveis de ambiente, como rodar a aplicação e como contribuir.
    ```
