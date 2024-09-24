@@ -1,6 +1,6 @@
 # Bot SimpleFit
 
-Este software foi desenvolvido como parte de um trabalho acadêmico na Universidade Paulista (UNIP), para a disciplina de XXXX. O objetivo do projeto é oferecer suporte aos usuários que desejam montar e gerenciar seus treinos de academia de forma personalizada, utilizando um bot de Inteligência Artificial (IA) avançado.
+Este software foi desenvolvido como parte de um trabalho acadêmico na Universidade Paulista (UNIP), para a disciplina de Projeto de Sistemas Orientados a Objetos. O objetivo do projeto é oferecer suporte aos usuários que desejam montar e gerenciar seus treinos de academia de forma personalizada, utilizando um bot de Inteligência Artificial (IA) avançado.
 
 ## Tabela de recursos
 
